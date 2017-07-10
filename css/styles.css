@@ -1,0 +1,67 @@
+﻿body
+{
+    font-family: "Roboto", sans-serif;
+    color: #545B6D;
+    padding-bottom: 70px;
+    margin: 0;
+}
+
+header {
+    margin: 0;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    text-align: center;
+}
+
+section {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: "Lobster", cursive;
+    color: #477F8C;
+    padding: 20px 0px;
+}
+
+section .btn {
+    margin-top: 50px;
+    color: #477F8C;
+}
+
+.row p {
+    margin: 0px 20px;
+}
+
+/* Input slider customization */
+
+input[type=range] {
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: #ddd;
+    height: 6px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 6px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #A9B7CA;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #E1E9F0;
+}
