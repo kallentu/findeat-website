@@ -3,16 +3,17 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-   
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
 
     <!-- Bootstrap -->
-    <link rel="stylesheet prefetch" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet prefetch" href="css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="css/styles.css"/>
+    <!-- CSS & Javascript -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <script src="js/script.js" type="text/javascript"></script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/lemon.ico" type="image/x-icon">
@@ -20,42 +21,48 @@
     <title>find. eat.</title>
 </head>
 <body>
-        <header>
-            <h1>find. eat.</h1>
+    <header>
+        <h1>find. eat.</h1>
+    </header>
 
+    <section>
+        <div class="container">
             <p>some site thing that finds you food because you are bad at making choices.</p>
-        </header>
+            <p>here are some options for you to figure out what you want in life, or just for food today idk.</p>
 
-        <section>
-            <div class="container">
-                <p>here are some options for you to figure out what you want in life, or just for food today idk.</p>
-
-                <h3>price</h3>
-                <!--insert slider for price inexpensive to expensive-->
-                <div class="row">
-                    <div class="col-xs-6 col-md-4 text-right"><p>you are broke</p></div>
-                    <div class="col-xs-6 col-md-4"><input type="range" min="10" value="10" max="500" step="1" /></div>
-                    <div class="col-xs-6 col-md-4 text-left"><p>got money to burn</p></div>
-                </div>
-
-                <h3>distance</h3>
-                <!--insert slider for distance 0 - 10km -->
-                <div class="row">
-                    <div class="col-xs-6 col-md-4 text-right"><p>right next door</p></div>
-                    <div class="col-xs-6 col-md-4"><input type="range" min="0" value="0" max="10" step="0.05" /></div>
-                    <div class="col-xs-6 col-md-4 text-left"><p>take the bus fool</p></div>
-                </div>
-
-                <button class="btn">find me some food pls</button>
+            <h3>price</h3>
+            <!--slider for price inexpensive to expensive-->
+            <div class="row">
+                <div class="col-xs-6 col-md-4 text-right"><p>you are broke</p></div>
+                <div class="col-xs-6 col-md-4"><input type="range" min="10" value="10" max="500" step="1" /></div>
+                <div class="col-xs-6 col-md-4 text-left"><p>got money to burn</p></div>
             </div>
-        </section>
 
-        <nav class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container">
-                <p class="navbar-text navbar-left">contact the loser who made this</p>
-
-                <button class="btn btn-default navbar-btn">github</button>
+            <h3>distance</h3>
+            <!--slider for distance 0 - 10km -->
+            <div class="row">
+                <div class="col-xs-6 col-md-4 text-right"><p>right next door</p></div>
+                <div class="col-xs-6 col-md-4"><input type="range" min="0" value="0" max="10" step="0.05" /></div>
+                <div class="col-xs-6 col-md-4 text-left"><p>take the bus fool</p></div>
             </div>
-        </nav>
+
+            <!--button to send all information to be processed-->
+            <button class="btn" onclick="getLocation()">find me some food pls</button>
+
+            <!-- all info about location -->
+            <h6 id="coordinates"></h6>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text navbar-left">contact the loser who made this</p>
+            <button class="btn btn-default navbar-btn">github</button>
+        </div>
+    </nav>
+
 </body>
 </html>
