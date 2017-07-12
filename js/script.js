@@ -1,5 +1,6 @@
-var service, map, infowindow;
+var service;
 var latitude, longitude;
+var distance;
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -14,27 +15,35 @@ function getLocation() {
 
 //displaying location on screen -- may or may not be necessary
 function setPosition(position) {
-    //determining location
+    //displaying location
     //document.getElementById("restaurant").innerHTML = "latitude: " + position.coords.latitude +
     //    "<br>longitude: " + position.coords.longitude;
 
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
-    init();
+    initPlaces();
+}
+
+function setOptions() {
+    //gets input from input slider
+    distance = document.getElementById("distance").value;
 }
 
 //initialize Google Places API by sending request for search
-function init() {
+function initPlaces() {
     //initialize user's latitude and longitude for usage
     var userLocation = { lat: latitude, lng: longitude };
 
-    //customize restaurant request, radius is in meters
+    setOptions();
+
+    //customize restaurant request, radius is in meters - taken from sliders
     var request = {
         location: userLocation,
-        radius: 10000,
-        type: ['restaurant']
-        //TODO: add min and max price
+        radius: distance,
+        type: ['restaurant'],
+        //TODO: add different categories, null if they have no preference
+        //keyword: null
     };
 
     service = new google.maps.places.PlacesService(document.createElement('div'));
@@ -46,6 +55,7 @@ function init() {
 function displayResult(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         var index = Math.round(Math.random() * results.length);
+        //document.getElementById("restaurant").innerHTML = results.length;
         document.getElementById("restaurant").innerHTML = results[index].name;
     }
 }
