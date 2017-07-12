@@ -1,4 +1,3 @@
-// find location of user
 var service, map, infowindow;
 var latitude, longitude;
 
@@ -25,6 +24,7 @@ function setPosition(position) {
     init();
 }
 
+//initialize Google Places API by sending request for search
 function init() {
     //initialize user's latitude and longitude for usage
     var userLocation = { lat: latitude, lng: longitude };
@@ -32,21 +32,20 @@ function init() {
     //customize restaurant request, radius is in meters
     var request = {
         location: userLocation,
-        radius: 5000,
+        radius: 10000,
         type: ['restaurant']
         //TODO: add min and max price
     };
 
     service = new google.maps.places.PlacesService(document.createElement('div'));
-    service.nearbySearch(request, callback);
+    service.nearbySearch(request, displayResult);
 }
 
-function callback(results, status) {
-
+//shows chosen place name
+//random int between 0 and however many restaurants were found
+function displayResult(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        //TODO: randomize which restaurant to get instead of taking 1
-        //shows chosen place name
-        document.getElementById("restaurant").innerHTML = results[0].name;
+        var index = Math.round(Math.random() * results.length);
+        document.getElementById("restaurant").innerHTML = results[index].name;
     }
-
 }
