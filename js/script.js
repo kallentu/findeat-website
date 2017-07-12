@@ -25,6 +25,7 @@ function setPosition(position) {
     initPlaces();
 }
 
+//options from distance to type of food, leave default if no preference
 function setOptions() {
     //gets input from input slider
     distance = document.getElementById("distance").value;
@@ -54,7 +55,7 @@ function initPlaces() {
 //random int between 0 and however many restaurants were found
 function displayResult(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        var index = Math.round(Math.random() * results.length);
+        var index = Math.round(Math.random() * (results.length - 1));
         //document.getElementById("restaurant").innerHTML = results.length;
         document.getElementById("restaurant").innerHTML = results[index].name;
     }
