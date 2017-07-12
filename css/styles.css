@@ -33,10 +33,6 @@ section .btn {
     margin: 0px 20px;
 }
 
-#map {
-    height: 750px;
-}
-
 /* Input slider customization */
 
 input[type=range] {
