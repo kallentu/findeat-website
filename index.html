@@ -36,12 +36,41 @@
             <p>some site thing that finds you food because you are bad at making choices.</p>
             <p>here are some options for you to figure out what you want in life, or just for food today idk.</p>
 
-            <h3>price</h3>
-            <!--slider for price inexpensive to expensive-->
+            <h3>categories</h3>
+            <p>choose <strong>one</strong> because you're probably craving something</p>
+            <!-- buttons for different categories of food-->
+            <!-- TODO: make buttons reset, add keyword -->
             <div class="row">
-                <div class="col-xs-6 col-md-4 text-right"><p>you are broke</p></div>
-                <div class="col-xs-6 col-md-4"><input type="range" min="10" value="10" max="500" step="1" /></div>
-                <div class="col-xs-6 col-md-4 text-left"><p>got money to burn</p></div>
+                <button class="btn">default - surprise me</button>
+            </div>
+
+            <div class="row">
+                <button class="btn">chinese</button>
+                <button class="btn">indian</button>
+                <button class="btn">mexican</button>
+                <button class="btn">japanese</button>
+                <button class="btn">korean</button>
+                <button class="btn">greek</button>
+                <button class="btn">italian</button>
+                <button class="btn">thai</button>
+                <button class="btn">vietnamese</button>
+                <button class="btn">soul</button>
+                <button class="btn">lebanese</button>
+                <button class="btn">french</button>
+            </div>
+
+            <div class="row">
+                <button class="btn">fast food</button>
+                <button class="btn">barbeque</button>
+                <button class="btn">buffet</button>
+                <button class="btn">cafe</button>
+                <button class="btn">coffee</button>
+                <button class="btn">pub</button>
+                <button class="btn">food truck</button>
+                <button class="btn">drive-thru</button>
+                <button class="btn">all you can eat</button>
+                <button class="btn">vegetarian</button>
+                <button class="btn">vegan</button>
             </div>
 
             <h3>distance</h3>
@@ -53,7 +82,7 @@
             </div>
 
             <!--button to send all information to be processed-->
-            <button class="btn" onclick="getLocation()">find me some food pls</button>
+            <button class="btn submit" onclick="getLocation()">find me some food pls</button>
 
             <!-- all info about location -->
             <h6 id="restaurant"></h6>

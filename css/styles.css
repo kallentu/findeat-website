@@ -24,9 +24,21 @@ h1, h2, h3 {
     padding: 20px 0px;
 }
 
-section .btn {
+strong {
+    color: #477F8C;
+}
+
+.submit {
     margin-top: 50px;
     color: #477F8C;
+}
+
+.row {
+    margin: 20px 0px;
+}
+
+.row .btn {
+    margin: 0px 5px;
 }
 
 .row p {
