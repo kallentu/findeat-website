@@ -20,17 +20,21 @@ section {
 
 h1, h2, h3 {
     font-family: "Lobster";
-    color: #477F8C;
+    color: #577FA4;
     padding: 20px 0px;
 }
 
 strong {
-    color: #477F8C;
+    color: #577FA4;
+}
+
+button:focus, button:active, .btn:focus , .btn:active, .btn:hover{
+    outline: 0 !important;
 }
 
 .submit {
     margin-top: 50px;
-    color: #477F8C;
+    color: #577FA4;
 }
 
 .row {

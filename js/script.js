@@ -63,10 +63,16 @@ function displayResult(results, status) {
 
 /* JQuery */
 $(document).ready(function () {
+    //initialize with default button
+    $("#default").css("background-color", "#E1E9F0");
+
     $("button").click(function () {
         //takes value of button/selection, null if default
         //makes sure it's not the submit button
         if (!$(this).hasClass("submit")) {
+            //inactivates all buttons besides the one chosen
+            $("button").css("background-color", "");
+            $(this).css("background-color", "#E1E9F0");
             category = $(this).val();
             //alert("" + category);
         }
