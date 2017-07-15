@@ -7,10 +7,7 @@
 
 header {
     margin: 0;
-    padding-top: 3%;
-    padding-right: 5%;
-    padding-bottom: 3%;
-    padding-left: 5%;
+    padding: 2% 5%;
     text-align: center;
 }
 
@@ -28,25 +25,27 @@ strong {
     color: #577FA4;
 }
 
-button:focus, button:active, .btn:focus , .btn:active, .btn:hover{
-    outline: 0 !important;
-}
-
-.submit {
-    margin-top: 50px;
-    color: #577FA4;
-}
-
 .row {
     margin: 20px 0px;
 }
 
 .row .btn {
     margin: 0px 5px;
+    background-color: #E1E9F0;
 }
 
 .row p {
     margin: 0px 20px;
+}
+
+.submit, .submit:hover, .submit:active, .submit:focus  {
+    margin-top: 50px;
+    color: white !important;
+    background-color: #A9B7CA;
+}
+
+button:focus, button:active, .btn:focus , .btn:active, .btn:hover{
+    outline: 0 !important;
 }
 
 /* Input slider customization */

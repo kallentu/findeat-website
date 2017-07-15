@@ -15,10 +15,6 @@ function getLocation() {
 
 //displaying location on screen -- may or may not be necessary
 function setPosition(position) {
-    //displaying location
-    //document.getElementById("restaurant").innerHTML = "latitude: " + position.coords.latitude +
-    //    "<br>longitude: " + position.coords.longitude;
-
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
@@ -38,7 +34,7 @@ function initPlaces() {
 
     setDistance();
 
-    //customize restaurant request, radius is in meters - taken from sliders
+    //customize restaurant request, radius is in meters - taken from slider
     var request = {
         location: userLocation,
         radius: distance,
@@ -64,17 +60,17 @@ function displayResult(results, status) {
 /* JQuery */
 $(document).ready(function () {
     //initialize with default button
-    $("#default").css("background-color", "#E1E9F0");
+    $("#default").css("background-color", "#A9B7CA");
+    $("#default").css("color", "white");
 
     $("button").click(function () {
         //takes value of button/selection, null if default
         //makes sure it's not the submit button
         if (!$(this).hasClass("submit")) {
             //inactivates all buttons besides the one chosen
-            $("button").css("background-color", "");
-            $(this).css("background-color", "#E1E9F0");
+            $("button").css("background-color", "").css("color", "#545B6D");
+            $(this).css("background-color", "#A9B7CA").css("color", "white");
             category = $(this).val();
-            //alert("" + category);
         }
     });
 });
