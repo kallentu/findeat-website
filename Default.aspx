@@ -62,7 +62,9 @@
             <button class="btn submit" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
 
             <!-- TODO: all info about location -->
-            <h6 id="restaurant"></h6>
+            <div id="restaurant"></div>
+            <div id="address"></div>
+            <div id="picture"></div>
 
         </div>
     </section>
