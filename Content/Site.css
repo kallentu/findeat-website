@@ -44,6 +44,27 @@ strong {
     border-bottom-right-radius: 5%;
 }
 
+.info {
+    margin: 50px 0px;
+}
+
+
+#picture img {
+    border-radius: 25%;
+}
+
+#restaurant {
+    font-family: "Lobster";
+    font-size: xx-large;
+    color: #577FA4;
+    margin-bottom: 20px;
+}
+
+#address {
+    color: #999;
+    margin-bottom: 20px;
+}
+
 .row {
     margin: 20px 0px;
 }

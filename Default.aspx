@@ -61,10 +61,12 @@
             <!--button to send all information to be processed-->
             <button class="btn submit" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
 
-            <!-- TODO: all info about location -->
-            <div id="restaurant"></div>
-            <div id="address"></div>
-            <div id="picture"></div>
+            <!-- TODO: must add more photos, set exact photo size -->
+            <div class="container info">
+                <div id="restaurant"></div>
+                <div id="address"></div>
+                <div id="picture"></div>
+            </div>
 
         </div>
     </section>
