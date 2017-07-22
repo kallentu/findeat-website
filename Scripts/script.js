@@ -54,7 +54,15 @@ function displayResult(results, status) {
         //document.getElementById("restaurant").innerHTML = results.length;
         document.getElementById("restaurant").innerHTML = results[index].name;
         document.getElementById("address").innerHTML = results[index].vicinity;
-        document.getElementById("picture").innerHTML = '<img style="height: 400px;" src="' + results[index].photos[0].getUrl({ 'maxWidth': 1500, 'maxHeight': 1500 }) + '" />'
+
+        //if no photo, leave empty
+        try {
+            document.getElementById("picture").innerHTML =  '<img style="height: 400px;" src="' + results[index].photos[0].getUrl({ 'maxWidth': 1500, 'maxHeight': 1500 }) + '" />';
+        }
+        catch (error) {
+            document.getElementById("picture").innerHTML = " ";
+        }
+        
     }
 }
 
