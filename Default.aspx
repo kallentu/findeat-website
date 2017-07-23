@@ -59,15 +59,26 @@
             </div>
 
             <!--button to send all information to be processed-->
+            <!-- TODO: save favourite restaurant entries -->
+            <!-- TODO: get accounts working -->
             <button class="btn submit" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
 
-            <!-- TODO: must add more photos, set exact photo size -->
             <div class="container info">
                 <div id="restaurant"></div>
                 <div id="address"></div>
                 <div id="picture"></div>
                 <div id="picture2"></div>
                 <div id="picture3"></div>
+                <table class="opening_hours">
+                    <tr>
+                        <td>
+                            <div id="hours"></div>
+                        </td>
+                        <td>
+                            <div id="open"></div>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
         </div>

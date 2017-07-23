@@ -13,7 +13,7 @@ function getLocation() {
     }
 }
 
-//displaying location on screen -- may or may not be necessary
+//setting location based on coordinates
 function setPosition(position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
@@ -56,26 +56,45 @@ function displayResult(results, status) {
         document.getElementById("restaurant").innerHTML = results[index].name;
         document.getElementById("address").innerHTML = results[index].vicinity;
 
-        try {
-            //request for Place Details, more information + photos
-            var request = {
-                placeId: results[index].place_id
-            };
+        //request for Place Details, more information + photos
+        var request = {
+            placeId: results[index].place_id
+        };
 
-            service.getDetails(request, function (place, status) {
-                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                    // adds 3 photos with styling in html
-                    document.getElementById("picture").innerHTML = '<img style="height: 400px; width: 400px; overflow: hidden; float: left; margin-left: 200px; margin-right: -220px;" src="' + place.photos[0].getUrl({ 'maxWidth': 1500, 'maxHeight': 1500 }) + '" />';
+        service.getDetails(request, function (place, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                // TODO: Add more map directions or link to directions
+                // TODO: Add opening hours, if open now, phone number
+
+                // adds 3 photos with styling in html
+                try {
+                    document.getElementById("picture").innerHTML = '<img style="height: 400px; width: 400px; overflow: hidden; float: left; margin-left: 240px; margin-right: -200px;" src="' + place.photos[0].getUrl({ 'maxWidth': 1500, 'maxHeight': 1500 }) + '" />';
                     document.getElementById("picture2").innerHTML = '<img style="height: 180px; width: 180px; overflow: hidden; margin-bottom: 20px;" src="' + place.photos[1].getUrl({ 'maxWidth': 800, 'maxHeight': 800 }) + '" />';
                     document.getElementById("picture3").innerHTML = '<img style="height: 180px; width: 180px; overflow: hidden; margin-top: 20px;" src="' + place.photos[2].getUrl({ 'maxWidth': 800, 'maxHeight': 800 }) + '" />';
                 }
-            });
-        }
-        catch (error) {
-            //otherwise removes photos and leaves information
-            document.getElementById("picture").innerHTML = " ";
-        }
-        
+                catch (error) {
+                    //otherwise removes photos and leaves information
+                    document.getElementById("picture").innerHTML = " ";
+                }
+                
+                //adds hours, if unavailable, leave empty
+                try {
+                    document.getElementById("hours").innerHTML = place.opening_hours.weekday_text[0] + "</br>" + 
+                                                                 place.opening_hours.weekday_text[1] + "</br>" +
+                                                                 place.opening_hours.weekday_text[2] + "</br>" +
+                                                                 place.opening_hours.weekday_text[3] + "</br>" +
+                                                                 place.opening_hours.weekday_text[4] + "</br>" +
+                                                                 place.opening_hours.weekday_text[5] + "</br>" +
+                                                                 place.opening_hours.weekday_text[6];
+                }
+                catch (error) {
+                    document.getElementById("hours").innerHTML = " ";
+                }
+
+                //displays whether restaurant is open or closed at the moment
+                document.getElementById("open").innerHTML = place.opening_hours.open_now ? "Open Now" : "Closed Now";
+            }
+        });
     }
 }
 

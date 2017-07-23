@@ -1,13 +1,12 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
-
-html, body {
+﻿html, body {
     height: 100%;
 }
 
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     font-family: "Roboto", sans-serif;
     background: url('https://images.unsplash.com/uploads/1412198485051133af17f/5049dacb?dpr=1&auto=format&fit=crop&w=2000&h=1500&q=80&cs=tinysrgb&crop=');
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     padding-top: 50px;
@@ -37,60 +36,18 @@ strong {
     color: #577FA4;
 }
 
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     height: 100%;
-    background-color:rgba(255,255,255,0.9); 
+    background-color: rgba(255,255,255,0.9);
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.info {
-    margin: 50px 0px;
-    text-align: center;
-}
-
-
-#picture img,
-#picture2 img,
-#picture3 img {
-    border-radius: 25%;
-}
-
-#restaurant {
-    font-family: "Lobster";
-    font-size: xx-large;
-    color: #577FA4;
-    margin-bottom: 20px;
-}
-
-#address {
-    color: #999;
-    margin-bottom: 40px;
-}
-
-.row {
-    margin: 20px 0px;
-}
-
-.row .btn {
-    margin: 0px 5px;
-    background-color: #E1E9F0;
-}
-
-.row p {
-    margin: 0px 20px;
-}
-
-.submit, .submit:hover, .submit:active, .submit:focus  {
-    margin-top: 50px;
-    color: white !important;
-    background-color: #A9B7CA;
-}
-
-button:focus, button:active, .btn:focus , .btn:active, .btn:hover{
-    outline: 0 !important;
-}
-
+/* Top Navigation Bar */
 .navbar {
     background-image: none;
     background-color: #eee !important;
@@ -119,8 +76,31 @@ button:focus, button:active, .btn:focus , .btn:active, .btn:hover{
     color: #577FA4;
 }
 
-/* Input slider customization */
+/* Selection buttons + submit */
+.row {
+    margin: 20px 0px;
+}
 
+.row .btn {
+    margin: 0px 5px;
+    background-color: #E1E9F0;
+}
+
+.row p {
+    margin: 0px 20px;
+}
+
+.submit, .submit:hover, .submit:active, .submit:focus {
+    margin-top: 50px;
+    color: white !important;
+    background-color: #A9B7CA;
+}
+
+button:focus, button:active, .btn:focus, .btn:active, .btn:hover {
+    outline: 0 !important;
+}
+
+/* Input slider customization */
 input {
     background-color: transparent;
 }
@@ -134,7 +114,7 @@ input[type=range]::-webkit-slider-runnable-track {
     height: 6px;
     border: none;
     border-radius: 3px;
-    margin-top: 6px; 
+    margin-top: 6px;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -155,12 +135,51 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     background: #E1E9F0;
 }
 
+/* Restaurant Info Content */
+.info {
+    margin: 50px 0px;
+}
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+
+#picture img,
+#picture2 img,
+#picture3 img {
+    border-radius: 25%;
+}
+
+#restaurant {
+    font-family: "Lobster";
+    font-size: xx-large;
+    color: #577FA4;
+    margin-bottom: 20px;
+}
+
+#address {
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.opening_hours {
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+    
+}
+
+.opening_hours td {
+    padding: 0px 60px;
+}
+
+#hours {
+    color: #999;
+    line-height: 30px;
+}
+
+#open {
+    font-family: "Lobster";
+    font-size: xx-large;
+    color: #577FA4;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -175,8 +194,8 @@ textarea {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
 }
-
