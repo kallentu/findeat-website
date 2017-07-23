@@ -66,6 +66,8 @@
                 <div id="restaurant"></div>
                 <div id="address"></div>
                 <div id="picture"></div>
+                <div id="picture2"></div>
+                <div id="picture3"></div>
             </div>
 
         </div>

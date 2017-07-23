@@ -46,10 +46,13 @@ strong {
 
 .info {
     margin: 50px 0px;
+    text-align: center;
 }
 
 
-#picture img {
+#picture img,
+#picture2 img,
+#picture3 img {
     border-radius: 25%;
 }
 
@@ -62,7 +65,7 @@ strong {
 
 #address {
     color: #999;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .row {
