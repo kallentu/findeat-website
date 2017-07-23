@@ -66,6 +66,7 @@
             <div class="container info">
                 <div id="restaurant"></div>
                 <div id="address"></div>
+                <div id="phone"></div>
                 <div id="picture"></div>
                 <div id="picture2"></div>
                 <div id="picture3"></div>
@@ -75,7 +76,7 @@
                             <div id="hours"></div>
                         </td>
                         <td>
-                            <div id="open"></div>
+                            <h3 id="open"></h3>
                         </td>
                     </tr>
                 </table>

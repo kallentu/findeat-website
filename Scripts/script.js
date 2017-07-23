@@ -64,7 +64,14 @@ function displayResult(results, status) {
         service.getDetails(request, function (place, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
                 // TODO: Add more map directions or link to directions
-                // TODO: Add opening hours, if open now, phone number
+
+                //displays number, if none, removes previous number
+                try {
+                    document.getElementById("phone").innerHTML = place.formatted_phone_number;
+                }
+                catch (error) {
+                    document.getElementById("phone").innerHTML = " ";
+                }
 
                 // adds 3 photos with styling in html
                 try {
@@ -88,7 +95,7 @@ function displayResult(results, status) {
                                                                  place.opening_hours.weekday_text[6];
                 }
                 catch (error) {
-                    document.getElementById("hours").innerHTML = " ";
+                    document.getElementById("hours").innerHTML = "Restaurant hours are currently unavailable.";
                 }
 
                 //displays whether restaurant is open or closed at the moment

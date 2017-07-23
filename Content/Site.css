@@ -156,6 +156,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 #address {
     color: #999;
+    margin-bottom: 5px;
+}
+
+#phone {
+    color: #999;
     margin-bottom: 30px;
 }
 
@@ -164,22 +169,13 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 40px;
-    
-}
-
-.opening_hours td {
-    padding: 0px 60px;
 }
 
 #hours {
     color: #999;
     line-height: 30px;
-}
-
-#open {
-    font-family: "Lobster";
-    font-size: xx-large;
-    color: #577FA4;
+    width: 400px;
+    margin-left: -100px;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
