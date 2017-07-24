@@ -2,6 +2,12 @@ var service;
 var latitude, longitude, position;
 var distance, category = null;
 
+//updates and displays distance the user is choosing
+function updateDistance(value) {
+    document.getElementById("distanceDisplay").innerHTML = (value / 1000).toFixed(1) + "km";
+}
+
+//grabs location of user
 function getLocation() {
     if (navigator.geolocation) {
         //getCurrentPosition() method is successful, it returns a coordinates object to the 
@@ -21,7 +27,7 @@ function setPosition(position) {
     initPlaces();
 }
 
-// user-inputted distance level
+//user-inputted distance level
 function setDistance() {
     //gets input from input slider
     distance = document.getElementById("MainContent_distance").value;

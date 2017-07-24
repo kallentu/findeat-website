@@ -45,13 +45,14 @@
             <h3>distance</h3>
             <!--slider for distance 0.5 - 10km -->
 
-            <!-- TODO: add some indication of distance numbers -->
+            <p id="distanceDisplay">0.5km</p>
+
             <div class="row">
                 <div class="col-xs-6 col-md-4 text-right">
                     <p>right next door</p>
                 </div>
                 <div class="col-xs-6 col-md-4">
-                    <asp:TextBox ID="distance" runat="server" type="range" min="500" value="500" max="10000" step="1" Width="330px"></asp:TextBox>
+                    <asp:TextBox ID="distance" runat="server" oninput="updateDistance(this.value)" type="range" min="500" value="500" max="10000" step="1" Width="330px"></asp:TextBox>
                 </div>
                 <div class="col-xs-6 col-md-4 text-left">
                     <p>take the bus fool</p>
