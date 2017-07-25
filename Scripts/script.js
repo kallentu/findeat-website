@@ -130,10 +130,11 @@ function displayResult(results, status) {
 /* JQuery */
 $(document).ready(function () {
 
-    //initialize with default button
+    ////initialize with default button
     $("#default").css("background-color", "#A9B7CA");
     $("#default").css("color", "white");
 
+    //change selection user chooses
     $(".btn").click(function () {
         //takes value of button/selection, null if default
         //makes sure it's not the submit button
@@ -145,10 +146,16 @@ $(document).ready(function () {
         }
     });
     
-    //TODO: Make when button click, scroll to top of restaurant info
+    //scroll down to restaurant information
+    $(".scroll").click(function () {
+        //adds space for info
+        $("hr").css("margin-top", "0");
 
-    //$("#scroll") {
-    //    $("html, body").scrollTo("#restaurant", 900);
-    //};
+        //delay for picture load
+        //TODO: maybe find more intuitive way to delay the scroll?
+        $("html, body").delay(1500).animate({
+            scrollTop: $("#restaurant").offset().top - 60
+        }, 800);
+    });
 
 });

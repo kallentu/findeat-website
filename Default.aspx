@@ -62,7 +62,7 @@
             <!--button to send all information to be processed-->
             <!-- TODO: save favourite restaurant entries -->
             <!-- TODO: get accounts working -->
-            <button class="btn submit" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
+            <button class="btn submit scroll" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
 
             <div class="container info">
                 <div id="restaurant"></div>
