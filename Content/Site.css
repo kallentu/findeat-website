@@ -137,9 +137,8 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 /* Restaurant Info Content */
 .info {
-    margin: 50px 0px;
+    margin-top: 40px;
 }
-
 
 #picture img,
 #picture2 img,
@@ -168,7 +167,6 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-top: 40px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 40px;
 }
 
 #hours {
@@ -176,6 +174,12 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     line-height: 30px;
     width: 400px;
     margin-left: -100px;
+}
+
+#rating {
+    font-family: "Lobster";
+    color: #577FA4;
+    margin-bottom: 20px;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -187,10 +191,6 @@ textarea {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-    .jumbotron {
-        margin-top: 20px;
-    }
-
     .body-content {
         padding: 0;
     }

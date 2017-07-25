@@ -7,6 +7,11 @@ function updateDistance(value) {
     document.getElementById("distanceDisplay").innerHTML = (value / 1000).toFixed(1) + "km";
 }
 
+function scrollToRes() {
+    window.location.hash = "#restaurant";
+    return false;
+}
+
 //grabs location of user
 function getLocation() {
     if (navigator.geolocation) {
@@ -104,6 +109,17 @@ function displayResult(results, status) {
                     document.getElementById("hours").innerHTML = "Restaurant hours are currently unavailable.";
                 }
 
+                //restaurant rating if available
+                try {
+                    document.getElementById("rating").innerHTML = "&#9733; " + place.rating + " / 5.0";
+                }
+                catch (error) {
+                    document.getElementById("rating").innerHTML = "Rating is currently unavailable.";
+                }
+
+                //directions button from current location
+                document.getElementById("directions").innerHTML = '<a href="https://maps.google.com?saddr=Current+Location&daddr=' + place.geometry.location + '" class="btn submit" target="_blank">directions to ' + place.name.toLowerCase() + '</a>';
+
                 //displays whether restaurant is open or closed at the moment
                 document.getElementById("open").innerHTML = place.opening_hours.open_now ? "Open Now" : "Closed Now";
             }
@@ -128,4 +144,11 @@ $(document).ready(function () {
             category = $(this).val();
         }
     });
+    
+    //TODO: Make when button click, scroll to top of restaurant info
+
+    //$("#scroll") {
+    //    $("html, body").scrollTo("#restaurant", 900);
+    //};
+
 });

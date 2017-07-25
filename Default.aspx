@@ -78,11 +78,12 @@
                         </td>
                         <td>
                             <h3 id="open"></h3>
+                            <h4 id="rating"></h4>
                         </td>
                     </tr>
                 </table>
+                <div id="directions"></div>
             </div>
-
         </div>
     </section>
 </asp:Content>
