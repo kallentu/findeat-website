@@ -7,11 +7,6 @@ function updateDistance(value) {
     document.getElementById("distanceDisplay").innerHTML = (value / 1000).toFixed(1) + "km";
 }
 
-function scrollToRes() {
-    window.location.hash = "#restaurant";
-    return false;
-}
-
 //grabs location of user
 function getLocation() {
     if (navigator.geolocation) {
@@ -32,18 +27,13 @@ function setPosition(position) {
     initPlaces();
 }
 
-//user-inputted distance level
-function setDistance() {
-    //gets input from input slider
-    distance = document.getElementById("MainContent_distance").value;
-}
-
 //initialize Google Places API by sending request for search
 function initPlaces() {
     //initialize user's latitude and longitude for usage
     var userLocation = { lat: latitude, lng: longitude };
 
-    setDistance();
+    //gets input from input slider
+    distance = document.getElementById("MainContent_distance").value;
 
     //customize restaurant request, radius is in meters - taken from slider
     var request = {

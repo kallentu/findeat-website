@@ -182,6 +182,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-bottom: 20px;
 }
 
+/* Section margins*/
+.about, .contact {
+    margin-bottom: 200px;
+}
+
 /* Footer Initialization - remove blank space*/
 hr {
     margin-top: -120px;
