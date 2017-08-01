@@ -138,6 +138,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 /* Restaurant Info Content */
 .info {
     margin-top: 40px;
+    margin-bottom: -120px;
 }
 
 #picture img,
@@ -182,14 +183,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-bottom: 20px;
 }
 
-/* Section margins*/
-.about, .contact {
-    margin-bottom: 200px;
-}
-
-/* Footer Initialization - remove blank space*/
+/* Extra footer spacing */
 hr {
-    margin-top: -120px;
+    margin-top: 20px;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */

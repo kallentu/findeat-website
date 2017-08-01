@@ -138,8 +138,8 @@ $(document).ready(function () {
     
     //scroll down to restaurant information
     $(".scroll").click(function () {
-        //adds space for info
-        $("hr").css("margin-top", "0");
+        //removes initialized space by info
+        $(".info").css("margin-bottom", "0");
 
         //delay for picture load
         //TODO: maybe find more intuitive way to delay the scroll?
