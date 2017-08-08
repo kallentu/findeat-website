@@ -64,6 +64,14 @@
             <!-- TODO: get accounts working -->
             <button class="btn submit scroll" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
 
+            <!-- Updated information used to save on database -->
+            <asp:UpdatePanel ID="update" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:HiddenField ID="placeIDServer" runat="server"></asp:HiddenField>
+                    <asp:HiddenField ID="nameServer" runat="server"></asp:HiddenField>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
             <div class="container info">
                 <div id="restaurant"></div>
                 <div id="address"></div>
@@ -83,6 +91,11 @@
                     </tr>
                 </table>
                 <div id="directions"></div>
+
+                <!-- Adds current restaurant information to database -->
+                <div id="hide">
+                    <asp:Button OnClick="addDB" class="btn submit" runat="server" Text="save restaurant"></asp:Button>
+                </div>
             </div>
         </div>
     </section>

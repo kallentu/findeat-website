@@ -53,9 +53,14 @@ function displayResult(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
 
         var index = Math.round(Math.random() * (results.length - 1));
-        //document.getElementById("restaurant").innerHTML = results.length;
+        
+        //values for restaurant name and database value
+        document.getElementById("MainContent_nameServer").value = results[index].name;
         document.getElementById("restaurant").innerHTML = results[index].name;
         document.getElementById("address").innerHTML = results[index].vicinity;
+
+        //hidden, adds placeid to make available for database
+        document.getElementById("MainContent_placeIDServer").value = results[index].place_id;
 
         //request for Place Details, more information + photos
         var request = {
@@ -64,7 +69,6 @@ function displayResult(results, status) {
 
         service.getDetails(request, function (place, status) {
             if (status == google.maps.places.PlacesServiceStatus.OK) {
-                // TODO: Add more map directions or link to directions
 
                 //displays number, if none, removes previous number
                 try {
@@ -124,6 +128,9 @@ $(document).ready(function () {
     $("#default").css("background-color", "#A9B7CA");
     $("#default").css("color", "white");
 
+    //hides the save button initially
+    $("#hide").hide();
+
     //change selection user chooses
     $(".btn").click(function () {
         //takes value of button/selection, null if default
@@ -146,6 +153,9 @@ $(document).ready(function () {
         $("html, body").delay(1500).animate({
             scrollTop: $("#restaurant").offset().top - 60
         }, 800);
+
+        //shows the save button
+        $("#hide").show();
     });
 
 });

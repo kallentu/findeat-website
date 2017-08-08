@@ -23,5 +23,6 @@ public partial class Restaurant
     public string Hours { get; set; }
     public string Rating { get; set; }
     public string Directions { get; set; }
-    public Nullable<bool> IsOpen { get; set; }
+    public string IsOpen { get; set; }
+    public string RestaurantCompleteInfo { get; set; }
 }
