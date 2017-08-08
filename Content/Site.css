@@ -195,6 +195,16 @@ textarea {
     max-width: 500px;
 }
 
+/* Favorites page */
+.panel {
+    max-height: 80px;
+    overflow:hidden;
+}
+
+.panel-heading:hover {
+    cursor: pointer;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .body-content {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="find. eat." Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="find. eat." Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default"%>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -60,15 +60,14 @@
             </div>
 
             <!--button to send all information to be processed-->
-            <!-- TODO: save favourite restaurant entries -->
-            <!-- TODO: get accounts working -->
             <button class="btn submit scroll" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
 
-            <!-- Updated information used to save on database -->
+            <!-- Updated information used to save on database, updated in Default.cs, input from script.js -->
             <asp:UpdatePanel ID="update" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <asp:HiddenField ID="placeIDServer" runat="server"></asp:HiddenField>
                     <asp:HiddenField ID="nameServer" runat="server"></asp:HiddenField>
+                    <asp:HiddenField ID="addressServer" runat="server"></asp:HiddenField>
                 </ContentTemplate>
             </asp:UpdatePanel>
 
@@ -91,11 +90,11 @@
                     </tr>
                 </table>
                 <div id="directions"></div>
+            </div>
 
-                <!-- Adds current restaurant information to database -->
-                <div id="hide">
-                    <asp:Button OnClick="addDB" class="btn submit" runat="server" Text="save restaurant"></asp:Button>
-                </div>
+            <!-- Adds current restaurant information to database -->
+            <div id="hide">
+                <asp:Button OnClick="addDB" class="btn submit" runat="server" Text="save restaurant"></asp:Button>
             </div>
         </div>
     </section>

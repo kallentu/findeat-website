@@ -17,7 +17,10 @@ public partial class Account_Favorites : System.Web.UI.Page
         string result = "";
 
         foreach (var restaurant in restaurants)
-            result += "<p>" + restaurant.Name + "</p>";
+            result += "<div class = 'panel panel-default'>" +
+                      "<div class = 'panel-heading'><h3 class='panel-title'>" + restaurant.Name + "</h3></div>" + 
+                      "<div class = 'panel-body'>" + restaurant.Address + "</div>" +
+                      "</div>";
 
         restaurantName.Text = result;
     }
