@@ -14,14 +14,37 @@ public partial class Account_Favorites : System.Web.UI.Page
         //queries database for info
         var restaurants = db.Restaurants;
 
+        //displayed result, count for panel number on doc
         string result = "";
+        var divCount = 0;
 
         foreach (var restaurant in restaurants)
+        {
             result += "<div class = 'panel panel-default'>" +
-                      "<div class = 'panel-heading'><h3 class='panel-title'>" + restaurant.Name + "</h3></div>" + 
-                      "<div class = 'panel-body'>" + restaurant.Address + "</div>" +
+                      "<div class = 'panel-heading' onclick=\"getDetails('" + restaurant.PlaceId + "', "+ divCount +")\"><h3 class='panel-title'>" + restaurant.Name + "</h3></div>" +
+                      "<div class = 'panel-body'>" +
+                      "<div class='address'></div>" +
+                      "<div class='phone'></div>" +
+                      "<div class='picture'></div>" +
+                      "<div class='picture2'></div>" +
+                      "<div class='picture3'></div>" +
+                      "<table class='opening_hours'>" +
+                      "<tr>" +
+                      "<td>" +
+                      "<div class='hours'></div>" +
+                      "</td>" +
+                      "<td>" +
+                      "<h3 class='open'></h3>" +
+                      "<h4 class='rating'></h4>" +
+                      "</td>" +
+                      "</tr>" +
+                      "</table>" +
+                      "<div class='directions'></div>" +
+                      "</div>" +
                       "</div>";
+            divCount++;
+        }
 
-        restaurantName.Text = result;
+        restaurantInfo.Text = result;
     }
 }

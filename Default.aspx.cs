@@ -9,11 +9,6 @@ using System.Data.SqlClient;
 
 public partial class _Default : Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-
     //Adds new entry to local database
     protected void addDB (object sender, EventArgs e)
     {
@@ -23,7 +18,7 @@ public partial class _Default : Page
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KallenTu\Documents\findeat\App_Data\Database.mdf;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         cmd.CommandType = System.Data.CommandType.Text;
-        cmd.CommandText = "INSERT Restaurants (PlaceId, Name, Address) VALUES ('"+ placeIDServer.Value +"', '"+ nameServer.Value + "', '" + addressServer.Value + "')";
+        cmd.CommandText = "INSERT Restaurants (PlaceId, Name) VALUES ('"+ placeIDServer.Value +"', '"+ nameServer.Value + "')";
 
         cmd.Connection = sqlConnection;
         sqlConnection.Open();

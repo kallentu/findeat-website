@@ -2,11 +2,14 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
     <section>
+        <!-- TODO: Make restaurants specific to user -->
         <h2>Favorite Restaurants</h2>
         <p>Welcome. You have successfully logged in.</p>
         <p>These are your favorite restaurants.</p>
+
+        <!-- each restaurant expanded, collapsable drawers-->
         <div>
-            <asp:Label ID="restaurantName" runat="server"></asp:Label>
+            <asp:Label ID="restaurantInfo" runat="server"></asp:Label>
         </div>
     </section>
 </asp:Content>

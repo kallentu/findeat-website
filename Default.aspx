@@ -62,37 +62,37 @@
             <!--button to send all information to be processed-->
             <button class="btn submit scroll" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
 
-            <!-- Updated information used to save on database, updated in Default.cs, input from script.js -->
+            <!-- updated information used to save on database, updated in Default.cs, input from script.js -->
             <asp:UpdatePanel ID="update" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <asp:HiddenField ID="placeIDServer" runat="server"></asp:HiddenField>
                     <asp:HiddenField ID="nameServer" runat="server"></asp:HiddenField>
-                    <asp:HiddenField ID="addressServer" runat="server"></asp:HiddenField>
                 </ContentTemplate>
             </asp:UpdatePanel>
 
+            <!-- restaurant information -->
             <div class="container info">
                 <div id="restaurant"></div>
-                <div id="address"></div>
-                <div id="phone"></div>
-                <div id="picture"></div>
-                <div id="picture2"></div>
-                <div id="picture3"></div>
+                <div class="address"></div>
+                <div class="phone"></div>
+                <div class="picture"></div>
+                <div class="picture2"></div>
+                <div class="picture3"></div>
                 <table class="opening_hours">
                     <tr>
                         <td>
-                            <div id="hours"></div>
+                            <div class="hours"></div>
                         </td>
                         <td>
-                            <h3 id="open"></h3>
-                            <h4 id="rating"></h4>
+                            <h3 class="open"></h3>
+                            <h4 class="rating"></h4>
                         </td>
                     </tr>
                 </table>
-                <div id="directions"></div>
+                <div class="directions"></div>
             </div>
 
-            <!-- Adds current restaurant information to database -->
+            <!-- adds current restaurant information to database -->
             <div id="hide">
                 <asp:Button OnClick="addDB" class="btn submit" runat="server" Text="save restaurant"></asp:Button>
             </div>

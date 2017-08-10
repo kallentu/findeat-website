@@ -1,4 +1,4 @@
-﻿html, body {
+﻿html {
     height: 100%;
 }
 
@@ -15,10 +15,9 @@ body {
 header {
     margin: 0;
     padding: 2% 5%;
-    text-align: center;
 }
 
-section {
+header, section {
     text-align: center;
 }
 
@@ -141,9 +140,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-bottom: -120px;
 }
 
-#picture img,
-#picture2 img,
-#picture3 img {
+.picture img,
+.picture2 img,
+.picture3 img {
     border-radius: 25%;
 }
 
@@ -154,12 +153,12 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-bottom: 20px;
 }
 
-#address {
+.address {
     color: #999;
     margin-bottom: 5px;
 }
 
-#phone {
+.phone {
     color: #999;
     margin-bottom: 30px;
 }
@@ -170,14 +169,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-left: auto;
 }
 
-#hours {
+.hours {
     color: #999;
     line-height: 30px;
     width: 400px;
     margin-left: -100px;
 }
 
-#rating {
+.rating {
     font-family: "Lobster";
     color: #577FA4;
     margin-bottom: 20px;
@@ -205,6 +204,7 @@ textarea {
     cursor: pointer;
 }
 
+/* TODO: make site mobile-friendly -> then make android app */
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .body-content {
