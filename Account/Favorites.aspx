@@ -8,10 +8,15 @@
         <p>These are your favorite restaurants.</p>
 
         <!-- each restaurant expanded, collapsable drawers-->
-        <!-- TODO: make restaurants deletable from database -->
-        <!-- TODO: order restaurants -->
         <div>
             <asp:Label ID="restaurantInfo" runat="server"></asp:Label>
+
+            <!-- TODO: Learn php -->
+            <div class="form-group">
+                <select class="form-control">
+                    <asp:Label ID="optionsServer" runat="server"></asp:Label>
+                </select>
+            </div>
         </div>
     </section>
 </asp:Content>

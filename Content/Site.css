@@ -201,16 +201,27 @@ textarea {
 
 /* Favorites page */
 .panel {
-    max-height: 100px;
+    max-height: 80px;
     overflow:hidden;
 }
 
 .panel-heading {
     margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom:10px;
 }
 
 .panel-heading:hover {
     cursor: pointer;
+}
+
+.panel-heading i {
+    margin-top: 10px;
+}
+
+.btn-danger {
+    display: inline-block;
+    margin: 10px 10px;
 }
 
 /* Contact page*/

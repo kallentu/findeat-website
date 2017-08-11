@@ -183,11 +183,11 @@ $(document).ready(function () {
 
         if ($(this).parent("div.panel").hasClass("active")) {
             $(this).parent("div.panel").animate({ maxHeight: "3000px" }, 1250);
-            $(this).children("span.glyphicon").toggleClass("glyphicon-chevron-down glyphicon-chevron-up");
+            $(this).children("i.fa").toggleClass("fa-angle-down fa-angle-up");
         }
         else {
-            $(this).parent("div.panel").animate({ maxHeight: "100px" }, 1250);
-            $(this).children("span.glyphicon").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+            $(this).parent("div.panel").animate({ maxHeight: "80px" }, 1250);
+            $(this).children("i.fa").toggleClass("fa-angle-up fa-angle-down");
         }
     });
 });
