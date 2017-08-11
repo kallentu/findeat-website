@@ -146,7 +146,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     border-radius: 25%;
 }
 
-#restaurant {
+.info .restaurant {
     font-family: "Lobster";
     font-size: xx-large;
     color: #577FA4;
@@ -182,6 +182,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-bottom: 20px;
 }
 
+.directions, #hide {
+    display: inline-block;
+    margin: 0 10px;
+}
+
 /* Extra footer spacing */
 hr {
     margin-top: 20px;
@@ -196,12 +201,27 @@ textarea {
 
 /* Favorites page */
 .panel {
-    max-height: 80px;
+    max-height: 100px;
     overflow:hidden;
+}
+
+.panel-heading {
+    margin-top: 0px;
 }
 
 .panel-heading:hover {
     cursor: pointer;
+}
+
+/* Contact page*/
+.contact-button {
+    color: white !important;
+    background-color: #696969;
+}
+
+.contact-button:hover {
+    color: #c9c9c9 !important;
+    background-color: #606060;
 }
 
 /* TODO: make site mobile-friendly -> then make android app */

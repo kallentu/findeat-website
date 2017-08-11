@@ -8,6 +8,8 @@
         <p>These are your favorite restaurants.</p>
 
         <!-- each restaurant expanded, collapsable drawers-->
+        <!-- TODO: make restaurants deletable from database -->
+        <!-- TODO: order restaurants -->
         <div>
             <asp:Label ID="restaurantInfo" runat="server"></asp:Label>
         </div>

@@ -13,7 +13,7 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(setPosition);
     }
     else {
-        document.getElementById("restaurant").innerHTML = "sorry, could not find your location.";
+        document.getElementsByClassName("restaurant")[0].innerHTML = "sorry, could not find your location.";
     }
 }
 
@@ -43,29 +43,26 @@ function initPlaces(latitude, longitude) {
     };
 
     var service = new google.maps.places.PlacesService(document.createElement("div"));
-    service.nearbySearch(request, displayResult);
+    service.nearbySearch(request, randomStoreResults);
 }
 
-//shows chosen place name and address, calls for more details and inputs information into hiddenfields
-function displayResult(results, status) {
+//random restaurant selection and inputs information into hiddenfields
+function randomStoreResults(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
 
         //random int between 0 and however many restaurants were found
         var index = Math.round(Math.random() * (results.length - 1));
         
-        //value for restaurant name
-        document.getElementById("restaurant").innerHTML = results[index].name;
-
         //hidden, adds placeid to make available for database
         document.getElementById("MainContent_placeIDServer").value = results[index].place_id;
         document.getElementById("MainContent_nameServer").value = results[index].name;
 
-        getDetails(results[index].place_id);
+        displayDetails(results[index].place_id);
     }
 }
 
 //request for Place Details, more information + photos
-function getDetails(id, index) {
+function displayDetails(id, index) {
     //if index is given, it's used
     index = (index == null) ? 0 : index;
 
@@ -79,8 +76,13 @@ function getDetails(id, index) {
     service.getDetails(request, function (place, status) {
         if (status == google.maps.places.PlacesServiceStatus.OK) {
 
-            //displays address
+            //displays essential information
             document.getElementsByClassName("address")[index].innerHTML = place.formatted_address;
+
+            try {
+                document.getElementsByClassName("restaurant")[index].innerHTML = place.name;
+            }
+            catch(error){} //notably favorites page which won't have
 
             //displays number, if none, removes previous number
             try {
@@ -124,7 +126,7 @@ function getDetails(id, index) {
             }
 
             //directions button from current location
-            document.getElementsByClassName("directions")[index].innerHTML = "<a href='https://maps.google.com?saddr=Current+Location&daddr=" + place.geometry.location + "' class='btn submit' target='_blank'>directions to " + place.name.toLowerCase() + "</a>";
+            document.getElementsByClassName("directions")[index].innerHTML = "<a href='https://maps.google.com?saddr=Current+Location&daddr=" + place.geometry.location + "' class='btn submit' target='_blank'><span class='glyphicon glyphicon-globe glyphicon-align-left'></span>&nbsp;&nbsp;directions to " + place.name.toLowerCase() + "</a>";
 
             //displays whether restaurant is open or closed at the moment
             document.getElementsByClassName("open")[index].innerHTML = place.opening_hours.open_now ? "Open Now" : "Closed Now";
@@ -164,7 +166,7 @@ $(document).ready(function () {
         //delay for picture load
         //TODO: maybe find more intuitive way to delay the scroll?
         $("html, body").delay(1500).animate({
-            scrollTop: $("#restaurant").offset().top - 60
+            scrollTop: $(".restaurant").offset().top - 60
         }, 800);
 
         //shows the save button
@@ -180,10 +182,12 @@ $(document).ready(function () {
         $(this).parent("div.panel").toggleClass("active");
 
         if ($(this).parent("div.panel").hasClass("active")) {
-            $(this).parent("div.panel").animate({ maxHeight: "3000px" }, 1000);
+            $(this).parent("div.panel").animate({ maxHeight: "3000px" }, 1250);
+            $(this).children("span.glyphicon").toggleClass("glyphicon-chevron-down glyphicon-chevron-up");
         }
         else {
-            $(this).parent("div.panel").animate({ maxHeight: "80px" }, 1000);
+            $(this).parent("div.panel").animate({ maxHeight: "100px" }, 1250);
+            $(this).children("span.glyphicon").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
         }
     });
 });

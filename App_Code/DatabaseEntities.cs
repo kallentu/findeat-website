@@ -15,14 +15,4 @@ public partial class Restaurant
     public System.Guid Id { get; set; }
     public string PlaceId { get; set; }
     public string Name { get; set; }
-    public string Address { get; set; }
-    public string Phone_Number { get; set; }
-    public string Picture1 { get; set; }
-    public string Picture2 { get; set; }
-    public string Picture3 { get; set; }
-    public string Hours { get; set; }
-    public string Rating { get; set; }
-    public string Directions { get; set; }
-    public string IsOpen { get; set; }
-    public string RestaurantCompleteInfo { get; set; }
 }

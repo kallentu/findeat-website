@@ -1,4 +1,4 @@
-﻿<%@ Page Title="find. eat." Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default"%>
+﻿<%@ Page Title="find. eat." Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -60,7 +60,7 @@
             </div>
 
             <!--button to send all information to be processed-->
-            <button class="btn submit scroll" onclick="getLocation(); return false;" runat="server">find me some food pls</button>
+            <button class="btn submit scroll" onclick="getLocation(); return false;" runat="server"><span class="glyphicon glyphicon-cutlery glyphicon-align-left"></span>&nbsp;&nbsp;find me some food!</button>
 
             <!-- updated information used to save on database, updated in Default.cs, input from script.js -->
             <asp:UpdatePanel ID="update" runat="server" UpdateMode="Conditional">
@@ -72,7 +72,7 @@
 
             <!-- restaurant information -->
             <div class="container info">
-                <div id="restaurant"></div>
+                <div class="restaurant"></div>
                 <div class="address"></div>
                 <div class="phone"></div>
                 <div class="picture"></div>
@@ -90,12 +90,13 @@
                     </tr>
                 </table>
                 <div class="directions"></div>
+
+                <!-- adds current restaurant information to database -->
+                <div id="hide">
+                    <asp:Button OnClick="addDB" class="btn submit" runat="server" Text="save restaurant"></asp:Button>
+                </div>
             </div>
 
-            <!-- adds current restaurant information to database -->
-            <div id="hide">
-                <asp:Button OnClick="addDB" class="btn submit" runat="server" Text="save restaurant"></asp:Button>
-            </div>
         </div>
     </section>
 </asp:Content>

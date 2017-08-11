@@ -11,17 +11,22 @@ public partial class Account_Favorites : System.Web.UI.Page
     {
         DatabaseEntities db = new DatabaseEntities();
 
-        //queries database for info
-        var restaurants = db.Restaurants;
+        //TODO: let user pick how it's sorted
+        //queries database for info, in ascending order
+        var restaurants = from res in db.Restaurants
+                          orderby res.Id ascending
+                          select res;
 
         //displayed result, count for panel number on doc
         string result = "";
         var divCount = 0;
 
+
         foreach (var restaurant in restaurants)
         {
             result += "<div class = 'panel panel-default'>" +
-                      "<div class = 'panel-heading' onclick=\"getDetails('" + restaurant.PlaceId + "', "+ divCount +")\"><h3 class='panel-title'>" + restaurant.Name + "</h3></div>" +
+                      "<div class = 'panel-heading' onclick=\"displayDetails('" + restaurant.PlaceId + "', "+ divCount +")\">" + 
+                      "<h3 class='panel-title'>"+ restaurant.Name + "</h3><span class='glyphicon glyphicon-chevron-down glyphicon-align-right'></span></div>" +
                       "<div class = 'panel-body'>" +
                       "<div class='address'></div>" +
                       "<div class='phone'></div>" +
