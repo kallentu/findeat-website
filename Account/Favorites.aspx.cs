@@ -15,7 +15,7 @@ public partial class Account_Favorites : System.Web.UI.Page
         //TODO: let user pick how it's sorted -> may need date added
         //queries database for info, in ascending order
         var restaurants = from res in db.Restaurants
-                          orderby res.Name ascending
+                          orderby res.DateAdded ascending
                           select res;
 
         //displayed result, count for panel number on doc

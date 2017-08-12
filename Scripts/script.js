@@ -164,7 +164,6 @@ $(document).ready(function () {
         $(".info").css("margin-bottom", "0");
 
         //delay for picture load
-        //TODO: maybe find more intuitive way to delay the scroll?
         $("html, body").delay(1500).animate({
             scrollTop: $(".restaurant").offset().top - 60
         }, 800);

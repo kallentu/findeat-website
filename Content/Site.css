@@ -75,6 +75,19 @@ strong {
     color: #577FA4;
 }
 
+#searchRestaurant {
+    margin: 0px;
+}
+
+#searchRestaurant input[type=text]{
+    width: 300px !important;
+}
+
+#searchButton {
+    background-color: #696969;
+    color: white;
+}
+
 /* Selection buttons + submit */
 .row {
     margin: 20px 0px;
@@ -219,9 +232,10 @@ textarea {
     margin-top: 10px;
 }
 
-.btn-danger {
-    display: inline-block;
-    margin: 10px 10px;
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus {
+    background-color:#d2322d !important;
 }
 
 /* Contact page*/

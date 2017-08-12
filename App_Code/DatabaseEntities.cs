@@ -15,4 +15,5 @@ public partial class Restaurant
     public System.Guid Id { get; set; }
     public string PlaceId { get; set; }
     public string Name { get; set; }
+    public string DateAdded { get; set; }
 }
