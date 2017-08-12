@@ -9,14 +9,14 @@
 
         <!-- each restaurant expanded, collapsable drawers-->
         <div>
-            <asp:Label ID="restaurantInfo" runat="server"></asp:Label>
-
-            <!-- TODO: Learn php -->
-            <div class="form-group">
-                <select class="form-control">
+            <div class="form-group form-inline">
+                <select class="form-control" id="deleteName" name="delete">
                     <asp:Label ID="optionsServer" runat="server"></asp:Label>
                 </select>
+                <asp:Button ID="deleteEntry" runat="server" Text="delete" CssClass="btn btn-danger" OnClick="deleteDBEntry" />
             </div>
+
+            <asp:Label ID="restaurantInfo" runat="server"></asp:Label>
         </div>
     </section>
 </asp:Content>

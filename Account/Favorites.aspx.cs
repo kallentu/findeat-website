@@ -12,10 +12,10 @@ public partial class Account_Favorites : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e) {
         DatabaseEntities db = new DatabaseEntities();
 
-        //TODO: let user pick how it's sorted
+        //TODO: let user pick how it's sorted -> may need date added
         //queries database for info, in ascending order
         var restaurants = from res in db.Restaurants
-                          orderby res.Id ascending
+                          orderby res.Name ascending
                           select res;
 
         //displayed result, count for panel number on doc
@@ -57,16 +57,20 @@ public partial class Account_Favorites : System.Web.UI.Page
         optionsServer.Text = options;
     }
 
-    //protected void deleteDBEntry (object sender, EventArgs e)
-    //{
-    //    SqlConnection sql = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KallenTu\Documents\findeat\App_Data\Database.mdf;Integrated Security=True");
+    protected void deleteDBEntry(object sender, EventArgs e)
+    {
+        SqlConnection sql = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KallenTu\Documents\findeat\App_Data\Database.mdf;Integrated Security=True");
 
-    //    SqlCommand cmd = new SqlCommand();
-    //    cmd.CommandType = System.Data.CommandType.Text;
-    //    cmd.CommandText = "DELETE Restaurants WHERE PlaceId = '"+ optionResult.Value +"'";
-    //    cmd.Connection = sql;
-    //    sql.Open();
-    //    cmd.ExecuteNonQuery();
-    //    sql.Close();
-    //}
+        SqlCommand cmd = new SqlCommand();
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.CommandText = "DELETE Restaurants WHERE Name = '" + Request.Form["delete"] + "'";
+        cmd.Connection = sql;
+
+        sql.Open();
+        cmd.ExecuteNonQuery();
+        sql.Close();
+
+        //refreshes page to ensure updated data
+        Response.Redirect(Request.RawUrl);
+    }
 }
