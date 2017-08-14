@@ -39,7 +39,7 @@ strong {
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     height: 100%;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,0.95);
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
     padding-left: 15px;
@@ -77,6 +77,7 @@ strong {
 
 #searchRestaurant {
     margin: 0px;
+    margin-top: 8px;
 }
 
 #searchRestaurant input[type=text]{
@@ -84,8 +85,8 @@ strong {
 }
 
 #searchButton {
-    background-color: #696969;
-    color: white;
+    margin-left: -27px;
+    color: #577FA4;
 }
 
 /* Selection buttons + submit */

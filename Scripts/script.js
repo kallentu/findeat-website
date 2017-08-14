@@ -43,11 +43,11 @@ function initPlaces(latitude, longitude) {
     };
 
     var service = new google.maps.places.PlacesService(document.createElement("div"));
-    service.nearbySearch(request, randomStoreResults);
+    service.nearbySearch(request, storeRandomResults);
 }
 
 //random restaurant selection and inputs information into hiddenfields
-function randomStoreResults(results, status) {
+function storeRandomResults(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
 
         //random int between 0 and however many restaurants were found

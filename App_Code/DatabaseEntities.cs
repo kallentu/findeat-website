@@ -16,4 +16,5 @@ public partial class Restaurant
     public string PlaceId { get; set; }
     public string Name { get; set; }
     public string DateAdded { get; set; }
+    public string UserName { get; set; }
 }

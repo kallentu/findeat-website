@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using System.Data.SqlClient;
+using System.Web.Providers.Entities;
 
 public partial class Account_Favorites : System.Web.UI.Page
 {
@@ -13,9 +14,10 @@ public partial class Account_Favorites : System.Web.UI.Page
         DatabaseEntities db = new DatabaseEntities();
 
         //TODO: let user pick how it's sorted -> may need date added
-        //queries database for info, in ascending order
+        //queries database for info, in ascending order with user specific saved
         var restaurants = from res in db.Restaurants
                           orderby res.DateAdded ascending
+                          where res.UserName.Equals(User.Identity.Name)
                           select res;
 
         //displayed result, count for panel number on doc

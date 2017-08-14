@@ -73,16 +73,14 @@
                     <div class="navbar-form navbar-left" role="search" id="searchRestaurant">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="search for a known restaurant" />
+                            <i class="fa fa-search" id="searchButton" aria-hidden="true" runat="server" onclick=""></i>
                         </div>
-                        <asp:Button Text=">" runat="server" CssClass="btn btn-default navbar-btn" id="searchButton"/>
                     </div>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                                <!-- Remove from anonymous view-->
-                                <li><a runat="server" href="~/Account/Favorites">Favorites</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>

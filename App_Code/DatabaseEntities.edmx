@@ -13,6 +13,7 @@
           <Property Name="PlaceId" Type="varchar(max)" />
           <Property Name="Name" Type="varchar(max)" />
           <Property Name="DateAdded" Type="varchar(max)" />
+          <Property Name="UserName" Type="varchar(max)" />
         </EntityType>
         <EntityContainer Name="DatabaseModelStoreContainer">
           <EntitySet Name="Restaurants" EntityType="Self.Restaurants" Schema="dbo" store:Type="Tables" />
@@ -29,6 +30,7 @@
           <Property Name="PlaceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="DateAdded" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           </EntityType>
         <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
@@ -42,6 +44,7 @@
           <EntitySetMapping Name="Restaurants">
             <EntityTypeMapping TypeName="DatabaseModel.Restaurant">
               <MappingFragment StoreEntitySet="Restaurants">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
