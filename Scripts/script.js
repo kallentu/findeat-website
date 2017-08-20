@@ -82,9 +82,8 @@ function displayDetails(id, index) {
             try {
                 document.getElementsByClassName("restaurant")[index].innerHTML = place.name;
             }
-            catch(error){} //notably favorites page which won't have
+            catch(error){}
 
-            //displays number, if none, removes previous number
             try {
                 document.getElementsByClassName("phone")[index].innerHTML = place.formatted_phone_number;
             }
@@ -92,18 +91,15 @@ function displayDetails(id, index) {
                 document.getElementsByClassName("phone")[index].innerHTML = "Phone numbers are currently unavailable. ";
             }
 
-            // adds 3 photos with styling in html
             try {
                 document.getElementsByClassName("picture")[index].innerHTML = "<img style='height: 400px; width: 400px; overflow: hidden; float: left; margin-left: 240px; margin-right: -200px;' src='" + place.photos[0].getUrl({ "maxWidth": 1500, "maxHeight": 1500 }) + "' />";
                 document.getElementsByClassName("picture2")[index].innerHTML = "<img style='height: 180px; width: 180px; overflow: hidden; margin-bottom: 20px;' src='" + place.photos[1].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
                 document.getElementsByClassName("picture3")[index].innerHTML = "<img style='height: 180px; width: 180px; overflow: hidden; margin-top: 20px;' src='" + place.photos[2].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
             }
             catch (error) {
-                //otherwise removes photos and leaves information
                 document.getElementsByClassName("picture")[index].innerHTML = "Pictures are currently unavailable. ";
             }
                 
-            //adds hours, if unavailable, leave empty
             try {
                 document.getElementsByClassName("hours")[index].innerHTML = place.opening_hours.weekday_text[0] + "</br>" +
                                                              place.opening_hours.weekday_text[1] + "</br>" +
@@ -117,7 +113,6 @@ function displayDetails(id, index) {
                 document.getElementsByClassName("hours")[index].innerHTML = "Restaurant hours are currently unavailable.";
             }
 
-            //restaurant rating if available
             try {
                 document.getElementsByClassName("rating")[index].innerHTML = "&#9733; " + place.rating + " / 5.0";
             }
@@ -125,10 +120,8 @@ function displayDetails(id, index) {
                 document.getElementsByClassName("rating")[index].innerHTML = "Rating is currently unavailable.";
             }
 
-            //directions button from current location
             document.getElementsByClassName("directions")[index].innerHTML = "<a href='https://maps.google.com?saddr=Current+Location&daddr=" + place.geometry.location + "' class='btn submit' target='_blank'><span class='glyphicon glyphicon-globe glyphicon-align-left'></span>&nbsp;&nbsp;directions to " + place.name.toLowerCase() + "</a>";
 
-            //displays whether restaurant is open or closed at the moment
             document.getElementsByClassName("open")[index].innerHTML = place.opening_hours.open_now ? "Open Now" : "Closed Now";
         }
     });

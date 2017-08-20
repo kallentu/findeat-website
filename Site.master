@@ -70,12 +70,12 @@
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                     <!-- TODO: Add search bar functionality -->
-                    <div class="navbar-form navbar-left" role="search" id="searchRestaurant">
+<%--                    <div class="navbar-form navbar-left" role="search" id="searchRestaurant">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="search for a known restaurant" />
                             <i class="fa fa-search" id="searchButton" aria-hidden="true" runat="server" onclick=""></i>
                         </div>
-                    </div>
+                    </div>--%>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
