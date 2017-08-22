@@ -63,12 +63,14 @@
             <button class="btn submit scroll" onclick="getLocation(); return false;" runat="server"><span class="glyphicon glyphicon-cutlery glyphicon-align-left"></span>&nbsp;&nbsp;find me some food!</button>
 
             <!-- updated information used to save on database, updated in Default.cs, input from script.js -->
-            <asp:UpdatePanel ID="update" runat="server" UpdateMode="Conditional">
+            <%--<asp:UpdatePanel ID="update" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <asp:HiddenField ID="placeIDServer" runat="server"></asp:HiddenField>
                     <asp:HiddenField ID="nameServer" runat="server"></asp:HiddenField>
                 </ContentTemplate>
-            </asp:UpdatePanel>
+            </asp:UpdatePanel>--%>
+            <asp:HiddenField ID="placeIDServer" runat="server"></asp:HiddenField>
+            <asp:HiddenField ID="nameServer" runat="server"></asp:HiddenField>
 
             <!-- restaurant information -->
             <div class="container info">

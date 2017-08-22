@@ -9,7 +9,7 @@ public partial class _Default : Page
     protected void addDB (object sender, EventArgs e)
     {
         //updates the data required to the current restaurant information
-        update.Update();
+        //update.Update();
 
         //ensures user is logged in, in order to save
         if (!User.Identity.IsAuthenticated)
