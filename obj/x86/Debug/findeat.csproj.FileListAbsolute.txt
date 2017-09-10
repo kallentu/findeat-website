@@ -1,0 +1,2 @@
+C:\Users\Kalle\OneDrive\Documents\findeat\obj\x86\Debug\findeat.csproj.CoreCompileInputs.cache
+C:\Users\Kalle\OneDrive\Documents\findeat\obj\x86\Debug\findeat.csprojResolveAssemblyReference.cache

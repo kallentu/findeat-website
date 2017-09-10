@@ -92,9 +92,9 @@ function displayDetails(id, index) {
             }
 
             try {
-                document.getElementsByClassName("picture")[index].innerHTML = "<img style='height: 40em; width: 40em; overflow: hidden; float: left; margin-left: 8em;' src='" + place.photos[0].getUrl({ "maxWidth": 1500, "maxHeight": 1500 }) + "' />";
-                document.getElementsByClassName("picture2")[index].innerHTML = "<img style='height: 18em; width: 18em; overflow: hidden; margin-bottom: 2em;' src='" + place.photos[1].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
-                document.getElementsByClassName("picture3")[index].innerHTML = "<img style='height: 18em; width: 18em; overflow: hidden; margin-top: 2em;' src='" + place.photos[2].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
+                document.getElementsByClassName("picture")[index].innerHTML = "<img style='height: 30vw; width: 30vw; overflow: hidden; float: left; margin-left: 5vw;' src='" + place.photos[0].getUrl({ "maxWidth": 1500, "maxHeight": 1500 }) + "' />";
+                document.getElementsByClassName("picture2")[index].innerHTML = "<img style='height: 13vw; width: 13vw; overflow: hidden; margin-bottom: 2vw;' src='" + place.photos[1].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
+                document.getElementsByClassName("picture3")[index].innerHTML = "<img style='height: 13vw; width: 13vw; overflow: hidden; margin-top: 2vw;' src='" + place.photos[2].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
             }
             catch (error) {
                 document.getElementsByClassName("picture")[index].innerHTML = "Pictures are currently unavailable. ";

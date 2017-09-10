@@ -48,14 +48,14 @@
             <p id="distanceDisplay">0.5km</p>
 
             <div class="row">
-                <div class="col-xs-6 col-md-4 text-right">
-                    <p>right next door</p>
+                <div class="col-xs-3 col-md-4 text-right">
+                    <p>near</p>
                 </div>
                 <div class="col-xs-6 col-md-4">
-                    <asp:TextBox ID="distance" runat="server" oninput="updateDistance(this.value)" type="range" min="500" value="500" max="10000" step="1" Width="25em"></asp:TextBox>
+                    <asp:TextBox ID="distance" runat="server" oninput="updateDistance(this.value)" type="range" min="500" value="500" max="10000" step="1" style="width:18vw;"></asp:TextBox>
                 </div>
-                <div class="col-xs-6 col-md-4 text-left">
-                    <p>take the bus fool</p>
+                <div class="col-xs-3 col-md-4 text-left">
+                    <p>far</p>
                 </div>
             </div>
 
