@@ -17,7 +17,7 @@ public partial class Account_Favorites : System.Web.UI.Page
         //queries database for info, in ascending order with user specific saved
         var restaurants = from res in db.Restaurants
                           orderby res.DateAdded ascending
-                          where res.UserName.Equals(User.Identity.Name)
+                          //where res.UserName.Equals(User.Identity.Name)      use only if login is working
                           select res;
 
         //displayed result, count for panel number on doc
@@ -61,7 +61,7 @@ public partial class Account_Favorites : System.Web.UI.Page
 
     protected void deleteDBEntry(object sender, EventArgs e)
     {
-        SqlConnection sql = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KallenTu\Documents\findeat\App_Data\Database.mdf;Integrated Security=True");
+        SqlConnection sql = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Kalle\OneDrive\Documents\findeat\App_Data\Database.mdf;Integrated Security=True");
 
         SqlCommand cmd = new SqlCommand();
         cmd.CommandType = System.Data.CommandType.Text;

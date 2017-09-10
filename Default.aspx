@@ -52,7 +52,7 @@
                     <p>right next door</p>
                 </div>
                 <div class="col-xs-6 col-md-4">
-                    <asp:TextBox ID="distance" runat="server" oninput="updateDistance(this.value)" type="range" min="500" value="500" max="10000" step="1" Width="330px"></asp:TextBox>
+                    <asp:TextBox ID="distance" runat="server" oninput="updateDistance(this.value)" type="range" min="500" value="500" max="10000" step="1" Width="25em"></asp:TextBox>
                 </div>
                 <div class="col-xs-6 col-md-4 text-left">
                     <p>take the bus fool</p>
