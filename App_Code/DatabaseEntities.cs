@@ -10,7 +10,7 @@
 using System;
 using System.Collections.Generic;
 
-public partial class Restaurant
+public partial class Restaurants
 {
     public System.Guid Id { get; set; }
     public string PlaceId { get; set; }

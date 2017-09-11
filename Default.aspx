@@ -4,11 +4,11 @@
 
     <section>
         <div class="container">
-            <p>some site thing that finds you food because you are bad at making choices.</p>
-            <p>here are some options for you to figure out what you want in life, or just for food today idk.</p>
+            <p>don't know where to eat? randomly find some food!</p>
+            <p><strong>choose a category</strong>, click on the bar to <strong>set your distance</strong>, and <strong>search</strong> to start finding food.</p>
 
             <h3>categories</h3>
-            <p>choose <strong>one</strong> because you're probably craving something</p>
+            <p>pick <strong>one</strong> category because you're probably craving something</p>
 
             <!-- buttons for different categories of food-->
             <div class="row">
@@ -77,20 +77,25 @@
                 <div class="restaurant"></div>
                 <div class="address"></div>
                 <div class="phone"></div>
-                <div class="picture"></div>
-                <div class="picture2"></div>
-                <div class="picture3"></div>
-                <table class="opening_hours">
-                    <tr>
-                        <td>
-                            <div class="hours"></div>
-                        </td>
-                        <td>
-                            <h3 class="open"></h3>
-                            <h4 class="rating"></h4>
-                        </td>
-                    </tr>
-                </table>
+                <div class="row text-center">
+                    <div class="picture"></div>
+                </div>
+                
+                <div class="row text-center justify-content-center" style="margin-top: 4vw;">
+                    <div class="col-xs-3 col-md-4 col-md-offset-2 ">
+                        <div class="picture2"></div>
+                    </div>
+                    <div class="col-xs-3 col-md-4">
+                        <div class="picture3"></div>
+                    </div>
+                </div>
+                <div class="row text-center justify-content-center" style="margin-top: 4vw;">
+                    <div class="hours col-xs-6 col-md-3"></div>
+                    <div class="col-xs-6 col-md-3" id="exInfo">
+                        <h3 class="open"></h3>
+                        <h4 class="rating"></h4>
+                    </div>
+                </div>
                 <div class="directions"></div>
 
                 <!-- adds current restaurant information to database -->

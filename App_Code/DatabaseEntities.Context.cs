@@ -23,5 +23,5 @@ public partial class DatabaseEntities : DbContext
         throw new UnintentionalCodeFirstException();
     }
 
-    public virtual DbSet<Restaurant> Restaurants { get; set; }
+    public virtual DbSet<Restaurants> Restaurants1 { get; set; }
 }

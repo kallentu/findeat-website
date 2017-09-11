@@ -22,7 +22,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Restaurant">
+        <EntityType Name="Restaurants">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -33,7 +33,7 @@
           <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           </EntityType>
         <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
+          <EntitySet Name="Restaurants1" EntityType="DatabaseModel.Restaurants" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -41,8 +41,8 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
-          <EntitySetMapping Name="Restaurants">
-            <EntityTypeMapping TypeName="DatabaseModel.Restaurant">
+          <EntitySetMapping Name="Restaurants1">
+            <EntityTypeMapping TypeName="DatabaseModel.Restaurants">
               <MappingFragment StoreEntitySet="Restaurants">
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />

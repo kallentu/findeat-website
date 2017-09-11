@@ -92,9 +92,9 @@ function displayDetails(id, index) {
             }
 
             try {
-                document.getElementsByClassName("picture")[index].innerHTML = "<img style='height: 30vw; width: 30vw; overflow: hidden; float: left; margin-left: 5vw;' src='" + place.photos[0].getUrl({ "maxWidth": 1500, "maxHeight": 1500 }) + "' />";
-                document.getElementsByClassName("picture2")[index].innerHTML = "<img style='height: 13vw; width: 13vw; overflow: hidden; margin-bottom: 2vw;' src='" + place.photos[1].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
-                document.getElementsByClassName("picture3")[index].innerHTML = "<img style='height: 13vw; width: 13vw; overflow: hidden; margin-top: 2vw;' src='" + place.photos[2].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
+                document.getElementsByClassName("picture")[index].innerHTML = "<img style='height: 35vw; width: 35vw; overflow: hidden;' src='" + place.photos[0].getUrl({ "maxWidth": 1500, "maxHeight": 1500 }) + "' />";
+                document.getElementsByClassName("picture2")[index].innerHTML = "<img style='height: 13vw; width: 13vw; overflow: hidden;' src='" + place.photos[1].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
+                document.getElementsByClassName("picture3")[index].innerHTML = "<img style='height: 13vw; width: 13vw; overflow: hidden;' src='" + place.photos[2].getUrl({ "maxWidth": 800, "maxHeight": 800 }) + "' />";
             }
             catch (error) {
                 document.getElementsByClassName("picture")[index].innerHTML = "Pictures are currently unavailable. ";
@@ -154,7 +154,7 @@ $(document).ready(function () {
     //scroll down to restaurant information
     $(".scroll").click(function () {
         //removes initialized space by info
-        $(".info").css("margin-bottom", "0");
+        $(".info").css("display", "block");
 
         //delay for picture load
         $("html, body").delay(1500).animate({

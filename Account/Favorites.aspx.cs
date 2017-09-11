@@ -15,7 +15,7 @@ public partial class Account_Favorites : System.Web.UI.Page
 
         //TODO: let user pick how it's sorted -> may need date added
         //queries database for info, in ascending order with user specific saved
-        var restaurants = from res in db.Restaurants
+        var restaurants = from res in db.Restaurants1
                           orderby res.DateAdded ascending
                           //where res.UserName.Equals(User.Identity.Name)      use only if login is working
                           select res;

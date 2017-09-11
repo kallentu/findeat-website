@@ -120,6 +120,7 @@ input {
 
 input[type=range] {
     -webkit-appearance: none;
+    cursor: pointer;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -150,9 +151,10 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 /* Restaurant Info Content */
 .info {
+    display: none;
     margin-top: 40px;
-    margin-bottom: -120px;
 }
+
 
 .picture img,
 .picture2 img,
@@ -177,17 +179,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     margin-bottom: 30px;
 }
 
-.opening_hours {
-    margin-top: 40px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .hours {
     color: #999;
     line-height: 30px;
-    width: 400px;
-    margin-left: -100px;
+    width: auto;
+    margin-left: 25%;
 }
 
 .rating {
@@ -251,9 +247,22 @@ textarea {
 }
 
 /* TODO: make site mobile-friendly -> then make android app */
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .body-content {
-        padding: 0;
+
+@media all and (max-width: 1000px) {
+    .picture2 {
+        display: none;
+    }
+
+    .picture3 {
+        display: none;
+    }
+
+    #exInfo {
+        margin-left: 25%;
+    }
+
+    /* input is wider for mobile view*/
+    #MainContent_distance {
+        width: 35vw !important;
     }
 }
